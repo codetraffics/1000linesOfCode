@@ -906,20 +906,143 @@
 // console.log(products1);
 // console.log(products2);
 
-const ages = [18, 19, 34, 21, 26];
+// const ages = [18, 19, 34, 21, 26];
 
-const addAges = (previousAge, currentAge) => {
-  return previousAge + currentAge;
+// const addAges = (previousAge, currentAge) => {
+//   return previousAge + currentAge;
+// };
+
+// const results = ages.reduce(addAges, 0);
+// console.log(results);
+
+// const scores = [78, 90, 87, 88, 95, 100, 80];
+// let res1 = scores.reduce((c, p) => {
+//   return c + p;
+// }, 0);
+
+// console.log(res1);
+// let highScore = scores.reduce((c, p) => (c.age > p ? c.age : p), 0);
+// console.log(highScore);
+
+// This keyword
+// console.log(window);
+// console.log(this);
+
+// window.firstName = "code";
+// this.lastName = "traffics";
+// this.fullName = `${firstName} ${lastName}`;
+// console.log(window);
+
+// console.log(this === window);
+// console.log(this !== window);
+
+// function printThis() {
+//   return this;
+// }
+
+// let res = printThis();
+// console.log(res);
+
+// const printThis = () => {
+//   return this;
+// };
+
+// let res = printThis();
+// console.log(res);
+
+// USING THIS KEYWORD IN OBJ
+// const obj = {
+//   firstName: "code",
+//   lastName: "traffics",
+//   fullName: function () {
+//     return `${this.firstName} ${this.lastName}`;
+//   },
+// };
+
+// let res = obj.fullName();
+// console.log(res);
+
+// Using Arrow FUnction as a Method
+// const obj = {
+//   firstName: "code",
+//   lastName: "traffics",
+//   fullName: () => {
+// return `${this.firstName} ${this.lastName}`; // returns undefined
+//   },
+// };
+
+// let res = obj.fullName();
+// console.log(res);
+
+// const person = {
+//   fullName: "codetraffics",
+//   age: 19,
+//   greetRegular: function () {
+//     return `Hello, my name is ${this.fullName} & I'm ${this.age} years old`;
+//   },
+//   greetArrow: () => {
+//     return `Hello, my name is ${this.fullName} & I'm ${this.age} years old`;
+//   },
+// };
+
+// console.log(person.greetArrow());
+// console.log(person.greetRegular());
+
+// Factory Functions
+function createStudent(name, age, grade, hobby) {
+  return {
+    name,
+    age,
+    grade,
+    hobby,
+    intro: function () {
+      console.log(
+        `Hello, my name is ${this.name}. I am ${this.age} years old. My favorite game is ${this.hobby}`
+      );
+    },
+  };
+}
+
+const ama = createStudent("Odeliah Gyimah", 7, 3, "dancing");
+ama.intro();
+const elizabeth = createStudent("Elizabeth Elikem", 9, 3, "jumping");
+elizabeth.intro();
+const papa = createStudent("Papa Kwame Amfo", 8, 3, "running");
+papa.intro();
+
+const createPlayer = (name, age, height, team) => {
+  return {
+    name,
+    age,
+    height,
+    team,
+    intro: function () {
+      console.log(
+        `${this.name} is a football player with a height of ${this.height}. His age is ${this.age} and he plays for ${this.team}`
+      );
+    },
+  };
 };
 
-const results = ages.reduce(addAges, 0);
-console.log(results);
+const jerry = createPlayer("Jerry Anderson", 15, 7.8, "Emerald Stars");
+jerry.intro();
 
-const scores = [78, 90, 87, 88, 95, 100, 80];
-let res1 = scores.reduce((c, p) => {
-  return c + p;
-}, 0);
+function generateVehicles(type, brand, model, year) {
+  return {
+    type,
+    brand,
+    model,
+    year,
+    intro: function () {
+      console.log(`${this.type}, ${this.brand}, ${this.model}, ${this.year}`);
+    },
+  };
+}
 
-console.log(res1);
-let highScore = scores.reduce((c, p) => (c.age > p ? c.age : p), 0);
-console.log(highScore);
+const gWagon = generateVehicles(
+  "Mercedes Benz",
+  "G-Class AMG G 63 Grand Edition",
+  "Base model",
+  2024
+);
+gWagon.intro();

@@ -988,61 +988,137 @@
 // console.log(person.greetArrow());
 // console.log(person.greetRegular());
 
-// Factory Functions
-function createStudent(name, age, grade, hobby) {
-  return {
-    name,
-    age,
-    grade,
-    hobby,
-    intro: function () {
-      console.log(
-        `Hello, my name is ${this.name}. I am ${this.age} years old. My favorite game is ${this.hobby}`
-      );
-    },
-  };
-}
+// Factory Functions Exercise 1
 
-const ama = createStudent("Odeliah Gyimah", 7, 3, "dancing");
-ama.intro();
-const elizabeth = createStudent("Elizabeth Elikem", 9, 3, "jumping");
-elizabeth.intro();
-const papa = createStudent("Papa Kwame Amfo", 8, 3, "running");
-papa.intro();
+// function createStudent(name, age, grade, hobby) {
+//   return {
+//     name,
+//     age,
+//     grade,
+//     hobby,
+//     intro: function () {
+//       console.log(
+//         `Hello, my name is ${this.name}. I am ${this.age} years old. My favorite game is ${this.hobby}`
+//       );
+//     },
+//   };
+// }
 
-const createPlayer = (name, age, height, team) => {
-  return {
-    name,
-    age,
-    height,
-    team,
-    intro: function () {
-      console.log(
-        `${this.name} is a football player with a height of ${this.height}. His age is ${this.age} and he plays for ${this.team}`
-      );
-    },
-  };
-};
+// const ama = createStudent("Odeliah Gyimah", 7, 3, "dancing");
+// ama.intro();
+// const elizabeth = createStudent("Elizabeth Elikem", 9, 3, "jumping");
+// elizabeth.intro();
+// const papa = createStudent("Papa Kwame Amfo", 8, 3, "running");
+// papa.intro();
 
-const jerry = createPlayer("Jerry Anderson", 15, 7.8, "Emerald Stars");
-jerry.intro();
+// const createPlayer = (name, age, height, team) => {
+//   return {
+//     name,
+// age,
+// height,
+//     team,
+//     intro: function () {
+//       console.log(
+//         `${this.name} is a football player with a height of ${this.height}. His age is ${this.age} and he plays for ${this.team}`
+//       );
+//     },
+//   };
+// };
 
-function generateVehicles(type, brand, model, year) {
-  return {
-    type,
-    brand,
-    model,
-    year,
-    intro: function () {
-      console.log(`${this.type}, ${this.brand}, ${this.model}, ${this.year}`);
-    },
-  };
-}
+// const jerry = createPlayer("Jerry Anderson", 15, 7.8, "Emerald Stars");
+// jerry.intro();
 
-const gWagon = generateVehicles(
-  "Mercedes Benz",
-  "G-Class AMG G 63 Grand Edition",
-  "Base model",
-  2024
-);
-gWagon.intro();
+// Factory Functions Exercise 2
+// function generateVehicles(type, brand, model, year) {
+//   return {
+//     type,
+//     brand,
+//     model,
+//     year,
+//     intro: function () {
+//       console.log(`${this.type}, ${this.brand}, ${this.model}, ${this.year}`);
+//     },
+//   };
+// }
+
+// const gWagon = generateVehicles(
+//   "Mercedes Benz",
+//   "G-Class AMG G 63 Grand Edition",
+//   "Base model",
+//   2024
+// );
+// gWagon.intro();
+
+// Constructor Functions
+
+// function Student(name, age, grade) {
+//   this.name = name;
+//   this.age = age;
+//   this.grade = grade;
+// }
+
+// const student1 = new Student("Kakra", 11, 3);
+// const student2 = new Student("Belinda", 8, 3);
+// console.log(student1);
+// console.log(student2.age);
+
+// function Book(title, author, year) {
+//   this.title = title;
+//   this.author = author;
+//   this.year = year;
+
+//   this.getInfo = function () {
+//     return `${title} was written by ${author} in ${year}`;
+//   };
+// }
+
+// const book1 = new Book("What If JavaScript Series", "codetraffics", "2024");
+// const book1Res = book1.getInfo();
+// console.log(book1Res);
+// const book2 = new Book("I see a future", "elvis B", 2024);
+// const book2Res = book2.getInfo();
+// console.log(book2Res);
+
+// Constructor Exercise 1
+// function Person(name, age, gender) {
+//   this.name = name;
+//   this.age = age;
+//   this.gender = gender;
+
+//   this.info = function () {
+//     console.log(
+//       `Name: ${this.name}, Age: (${this.age}), Gender: ${this.gender}`
+//     );
+//   };
+// }
+
+// const person1 = new Person("codetraffics", 17, "male");
+// const person2 = new Person("catherine", 18, "female");
+// person1.info();
+// person2.info();
+
+// Constructor Exercise 2
+// function Car(make, model, year, color) {
+//   this.make = make;
+//   this.model = model;
+//   this.year = year;
+//   this.color = color;
+
+//   this.start = function () {
+//     console.log(`Starting the ${this.make} ${this.model}...`);
+//   };
+
+//   this.stop = function () {
+//     console.log(`Stopping the ${this.make} ${this.model}.`);
+// };
+// }
+
+// const car1 = new Car(
+//   "Mercedes Benz",
+//   "G-Class AMG G 63 Grand Edition",
+//   2024,
+//   "black"
+// );
+// const car2 = new Car("BMW", "7 Series", "2023", "blue");
+// car1.start();
+// car2.stop();
